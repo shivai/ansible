@@ -13,6 +13,9 @@ jobs:
       - run:
           command: |
             ansible-playbook -i hosts main-remote.yml
+      - run:
+          command: |
+            curl -I 3.82.251.52:3000
 workflows:
   workflows:
     jobs:
