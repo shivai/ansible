@@ -27,4 +27,4 @@ workflows:
     jobs:
       - configuration_infra
       - smoke_test:
-          requiers: [configuration_infra]
+          requires: [configuration_infra]
