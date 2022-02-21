@@ -15,6 +15,7 @@ jobs:
             ansible-playbook -i hosts main-remote.yml
       - run:
           command: |
+            apk add --update curl
             curl -I 3.82.251.52:3000
 workflows:
   workflows:
