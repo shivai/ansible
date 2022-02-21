@@ -13,6 +13,10 @@ jobs:
       - run:
           command: |
             ansible-playbook -i hosts main-remote.yml
+  smoke_test:
+    docker:
+      - image: alpine:latest
+    steps:
       - run:
           command: |
             apk add --update curl
