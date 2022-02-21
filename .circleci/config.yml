@@ -6,6 +6,7 @@ commands:
           command: |
             aws cloudformation delete-stack \
               --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5}
+          when: on_fail
 
 jobs:
   configuration_infra:
@@ -30,8 +31,7 @@ jobs:
             apk add --update curl
       - run: |
             curl -I http://3.82.251.52:3000
-      - destroy_env:
-          when: on_fail
+      - destroy_env
 workflows:
   workflows:
     jobs:
