@@ -1,0 +1,19 @@
+version: 2.1
+jobs:
+  configuration_infra:
+    docker:
+      - image: python:3.7-alpine3.11
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints: ["06:ee:36:6f:f0:b9:22:f7:e3:7c:d0:f6:3b:14:57:d6"]
+      - run:
+          command: |
+            apk add --update ansible
+      - run:
+          command: |
+            ansible-playbook -i hosts main-remote.yml
+workflows:
+  workflows:
+    jobs:
+      - configuration_infra
