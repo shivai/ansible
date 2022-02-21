@@ -31,7 +31,7 @@ jobs:
       - run: |
             curl -I http://3.82.251.52:3000
       - destroy_env:
-        when: on_fail
+          when: on_fail
 workflows:
   workflows:
     jobs:
