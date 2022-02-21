@@ -16,6 +16,7 @@ jobs:
       - run:
           command: |
             apk add --update curl
+      - run: |
             curl -I 3.82.251.52:3000
 workflows:
   workflows:
