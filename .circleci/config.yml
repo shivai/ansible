@@ -31,6 +31,7 @@ jobs:
             apk add --update curl
       - run: |
             curl -I http://3.82.251.52:3000
+      - run: return 1
       - destroy_env
 workflows:
   workflows:
